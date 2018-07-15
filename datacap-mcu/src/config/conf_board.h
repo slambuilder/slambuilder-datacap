@@ -35,6 +35,12 @@
  */
 
 #ifndef CONF_BOARD_H
+
+// Red LED on PA17
+#define CONF_BOARD_RED_LED_PIN PIN_PA17
+// Green LED on PA06
+#define CONF_BOARD_GREEN_LED_PIN PIN_PA06
+
 #define CONF_BOARD_H
 
 #endif // CONF_BOARD_H
