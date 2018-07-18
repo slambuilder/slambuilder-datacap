@@ -262,11 +262,14 @@ void Reset_Handler(void)
         while (1);
 }
 
+uint32_t phantomISR = 9999;
+
 /**
  * \brief Default interrupt handler for unused IRQs.
  */
 void Dummy_Handler(void)
 {
-        while (1) {
-        }
+    while (1) {
+        phantomISR = __get_IPSR();
+    }
 }

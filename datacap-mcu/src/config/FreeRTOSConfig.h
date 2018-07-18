@@ -52,7 +52,7 @@
 
 #define configUSE_QUEUE_SETS                    1
 #define configUSE_IDLE_HOOK                     0
-#define configUSE_TICK_HOOK                     1
+#define configUSE_TICK_HOOK                     0
 #define configCPU_CLOCK_HZ                      ( 48000000 )
 #define configTICK_RATE_HZ                      ( 1000 )
 #define configMAX_PRIORITIES                    ( 5 )
@@ -147,14 +147,14 @@ See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
 
 /* Normal assert() semantics without relying on the provision of an assert.h
 header file. */
-#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
+void vApplicationAssertHook(void);
+#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); vApplicationAssertHook(); for( ;; ); }
 
-/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
-standard names.Based on the architecture  choosen, the below definitons may be needed*/
-
-/*#define xPortPendSVHandler PendSV_Handler
+// Definitions that map the FreeRTOS port interrupt handlers to their CMSIS standard names. 
+// Based on the architecture  chosen, the below definitions may be needed
+#define xPortPendSVHandler PendSV_Handler
 #define vPortSVCHandler SVC_Handler
-#define xPortSysTickHandler SysTick_Handler */
+#define xPortSysTickHandler SysTick_Handler
 
 #endif /* FREERTOS_CONFIG_H */
 
