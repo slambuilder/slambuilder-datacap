@@ -52,6 +52,10 @@
  * running the ASF driver selector tool. Any changes will be discarded.
  */
 
+// From module: ADC - Analog-to-Digital Converter (Callback APIs)
+#include <adc.h>
+#include <adc_callback.h>
+
 // From module: Common SAM0 compiler driver
 #include <compiler.h>
 #include <status_codes.h>
@@ -59,9 +63,17 @@
 // From module: Common build items for user board support templates
 #include <user_board.h>
 
+// From module: DAC - Digital-to-Analog Converter (Callback APIs)
+#include <dac.h>
+#include <dac_callback.h>
+
+// From module: DMAC - Direct Memory Access Controller
+#include <dma.h>
+#include <dma_crc.h>
+
 // From module: FreeRTOS - kernel 10.0.0
 #include <FreeRTOS.h>
-#include <stack_macros.h>
+#include <StackMacros.h>
 #include <croutine.h>
 #include <deprecated_definitions.h>
 #include <event_groups.h>

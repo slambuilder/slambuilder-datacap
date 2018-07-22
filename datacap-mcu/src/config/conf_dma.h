@@ -1,7 +1,7 @@
 /**
  * \file
  *
- * \brief User board configuration template
+ * \brief SAM Direct Memory Access Driver Configuration Header
  *
  * Copyright (c) 2013-2018 Microchip Technology Inc. and its subsidiaries.
  *
@@ -33,18 +33,9 @@
 /*
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>
  */
+#ifndef CONF_DMA_H_INCLUDED
+#define CONF_DMA_H_INCLUDED
 
-#ifndef CONF_BOARD_H
-#define CONF_BOARD_H
+#define CONF_MAX_USED_CHANNEL_NUM 5
 
-// Red LED on PA17
-#define CONF_BOARD_RED_LED_PIN PIN_PA17
-// Green LED on PA06
-#define CONF_BOARD_GREEN_LED_PIN PIN_PA06
-
-#define CONF_BOARD_ANALOG_CH1 ADC_POSITIVE_INPUT_PIN2
-#define CONF_BOARD_ANALOG_CH2 ADC_POSITIVE_INPUT_PIN3
-#define CONF_BOARD_ANALOG_CH3 ADC_POSITIVE_INPUT_PIN4
-#define CONF_BOARD_ANALOG_CH4 ADC_POSITIVE_INPUT_PIN5
-
-#endif // CONF_BOARD_H
+#endif
